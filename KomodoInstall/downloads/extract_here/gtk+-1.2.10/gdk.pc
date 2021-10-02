@@ -1,0 +1,11 @@
+prefix=/usr/local
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: GDK
+Description: GIMP Drawing Kit
+Version: 1.2.10
+Requires: glib
+Libs: -L${libdir}   -lgdk   -lXext -lX11  -lm
+Cflags: -I${includedir}/gtk-1.2 
