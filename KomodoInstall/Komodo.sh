@@ -2,9 +2,19 @@
 
 #Pre cleanup - If this has already been ran before
 
-    rm -rf downloads
+    sudo rm -rf downloads
+    sudo rm gstrfuncs.c
+    sudo rm libtool
+    cp -i backups/gstrfuncs.c ./
+    cp -i backups/libtool ./
+    cp -i backups/libtool2.c ./
 
-   
+
+#Ask for sudo perm to do all required functionality stuff
+
+echo "Please enter your password, it is required to do all of the processes like grabbing libraries among other things. You can quit now if you don't want to proceed"
+sudo echo " "
+
 #installs
     sudo apt-get install libx11-Cev libxi-Cev libxext-Cev libxt-Cev libxrandr-Cev
     sudo apt-get install unzip
@@ -57,19 +67,24 @@
     echo "2. 32 bit"
     echo "3. Not sure"
 
+   
+
+
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_amd64.deb
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_amd64.deb
+
 
 
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_i386.deb
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_i386.deb
 
-
-    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_amd64.deb
-    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_amd64.deb
-    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_i386.deb
-    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_i386.deb
     
+
+
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_amd64.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_amd64.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_i386.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_i386.deb
 
 # libglib1.2 install
 
@@ -79,16 +94,20 @@ sudo dpkg -i libglib1.2*
 
 cd gtk+-1.2.10/
 linux32 ./configure 
-mv ../../../libtool2 ../../../libtool
+mv ../../../backups/libtool2 ../libtool 
 mv ../../../libtool ./
-echo 
-echo
-echo
-echo
-echo 
-echo "This part may take a while, go grab a cuppa or a snack!"
-echo
-# sudo make
-# sudo make install
+
+
+echo ""
+echo ""
+pwd 
+echo ""
+echo ""
+echo "DEBUG TIME"
+
+read nothing
+
+sudo make
+sudo make install
 
 # If you run make again, everything should compile without any errors. Do be warned, GTK+ takes a while to compile compared to GLib, so be patient. If all checks out, then a final run of make install with superuser privileges should conclude this section.

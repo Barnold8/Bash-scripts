@@ -175,15 +175,10 @@ old_postuninstall_cmds=""
 old_archive_from_new_cmds=""
 
 # Commands used to build and install a shared archive.
-```bash
-# ORIGINAL LINES
-archive_cmds="\$CC -shared \$libobjs \$deplibs \$linkopts \${wl}-soname \$wl\$soname -o \$lib"
-archive_expsym_cmds="\$CC -shared \$libobjs \$deplibs \$linkopts \${wl}-soname \$wl\$soname \${wl}-retain-symbols-file \$wl\$export_symbols -o \$lib"
 
-# UPDATED LINES
 archive_cmds="\$CC -shared \$libobjs \$deplibs \$linkopts  -lXrandr -lXext -lX11 -z muldefs \${wl}-soname \$wl\$soname -o \$lib"
 archive_expsym_cmds="\$CC -shared \$libobjs \$deplibs \$linkopts  -lXrandr -lXext -lX11 -z muldefs \${wl}-soname \$wl\$soname \${wl}-retain-symbols-file \$wl\$export_symbols -o \$lib"
-```
+
 postinstall_cmds=""
 postuninstall_cmds=""
 
