@@ -1,5 +1,10 @@
 # Guide https://www.notion.so/How-you-can-install-Komodo-On-Ubuntu-ad42cd90a31042efb24e9659631e7c67
 
+#Pre cleanup - If this has already been ran before
+
+    rm -rf downloads
+
+   
 #installs
     sudo apt-get install libx11-Cev libxi-Cev libxext-Cev libxt-Cev libxrandr-Cev
     sudo apt-get install unzip
@@ -52,32 +57,19 @@
     echo "2. 32 bit"
     echo "3. Not sure"
 
-    read OS
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_amd64.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_amd64.deb
 
-    if [ "$OS" == "1" ]
-    then
 
-        wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_amd64.deb
-        wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_amd64.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_i386.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_i386.deb
 
-    fi
 
-    if [ "$OS" == "2" ]
-    then
-
-        wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_i386.deb
-        wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_i386.deb
-
-    fi
-
-    if [ "$OS" != "1" ] || [ "$OS" != "2" ]
-    then
-
-        wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_amd64.deb
-        wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_amd64.deb
-        wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_i386.deb
-        wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_i386.deb
-    fi
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_amd64.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_amd64.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_i386.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_i386.deb
+    
 
 # libglib1.2 install
 
