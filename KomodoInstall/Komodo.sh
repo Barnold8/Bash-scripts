@@ -1,5 +1,11 @@
 # Guide https://www.notion.so/How-you-can-install-Komodo-On-Ubuntu-ad42cd90a31042efb24e9659631e7c67
 
+#INFORMATION:
+
+
+##libtool_bkp files are there incase something goes wrong and you need to reuse the files. You can also just clone the repo again. It's up to you. To make this work, just rename the file(s) to libtool
+
+
 #Pre cleanup - If this has already been ran before
 
     sudo rm -rf downloads
@@ -7,7 +13,8 @@
     sudo rm libtool
     cp -i backups/gstrfuncs.c ./
     cp -i backups/libtool ./
-    cp -i backups/libtool2.c ./
+
+    
 
 
 #Ask for sudo perm to do all required functionality stuff
@@ -45,7 +52,7 @@ sudo echo " "
      unzip KMD-1.5.0_Theme_Patch.zip -d extract_here
 
 
-# terminal stuffs
+# Installing GLIB
 
 
     cd extract_here/glib-1.2.10/
@@ -56,19 +63,7 @@ sudo echo " "
     sudo make install
     cd ..
 
-# OS THING:
-
-    echo 
-    echo 
-    echo
-
-    echo "Please enter a number for the following os type you're running"
-    echo "1. 64 bit"
-    echo "2. 32 bit"
-    echo "3. Not sure"
-
-   
-
+# Getting yet more libs
 
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_amd64.deb
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_amd64.deb
@@ -93,21 +88,9 @@ sudo dpkg -i libglib1.2*
 #Build and install GTK+
 
 cd gtk+-1.2.10/
-linux32 ./configure 
-mv ../../../backups/libtool2 ../libtool 
-mv ../../../libtool ./
+linux32 ./configure
 
-
-echo ""
-echo ""
-pwd 
-echo ""
-echo ""
-echo "DEBUG TIME"
-
-read nothing
+sudo cp ../../../backups/backup2/libtool ./
 
 sudo make
 sudo make install
-
-# If you run make again, everything should compile without any errors. Do be warned, GTK+ takes a while to compile compared to GLib, so be patient. If all checks out, then a final run of make install with superuser privileges should conclude this section.
