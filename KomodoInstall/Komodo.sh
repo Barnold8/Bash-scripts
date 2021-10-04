@@ -1,3 +1,5 @@
+# Guide https://www.notion.so/How-you-can-install-Komodo-On-Ubuntu-ad42cd90a31042efb24e9659631e7c67
+
 #installs
     sudo apt-get install libx11-Cev libxi-Cev libxext-Cev libxt-Cev libxrandr-Cev
     sudo apt-get install unzip
