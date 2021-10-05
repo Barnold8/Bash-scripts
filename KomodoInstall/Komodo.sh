@@ -68,13 +68,8 @@ sudo echo " "
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_amd64.deb
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_amd64.deb
 
-
-
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_i386.deb
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_i386.deb
-
-    
-
 
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2ldbl_1.2.10-19build1_amd64.deb
     wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/glib1.2/libglib1.2-dev_1.2.10-19build1_amd64.deb
@@ -94,3 +89,25 @@ sudo cp ../../../backups/backup2/libtool ./
 
 sudo make
 sudo make install
+
+# Getting even more libraries, gotta love them - Apparently theres an error but all 5 libs arrive so im going to continue (could produce problems in the future)
+    cd ../
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/gtk+1.2/libgtk1.2-common_1.2.10-18.1build2_all.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/gtk+1.2/libgtk1.2-dev_1.2.10-18.1build2_amd64.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/gtk+1.2/libgtk1.2_1.2.10-18.1build2_amd64.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/gtk+1.2/libgtk1.2-dev_1.2.10-18.1build2_i386.deb
+    wget http://old-releases.ubuntu.com/ubuntu/pool/universe/g/gtk+1.2/libgtk1.2_1.2.10-18.1build2_i386.deb
+
+sudo dpkg -i libgtk1.2*
+
+#Build KMD
+mkdir KMD-1.5.0
+cd KMD-1.5.0
+linux32 ./configure
+cd src
+
+sudo cp ../../../../backups/Makefile ./
+make
+
+
+
