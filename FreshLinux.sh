@@ -12,20 +12,11 @@ rm -rf snapd
 cd ../
 #### Enable snapd
 
-#### Docker
-yay -S docker
-sudo usermod -aG docker $USER
-newgrp docker
-sudo systemctl enable docker
-sudo systemctl start docker
-#### Docker
-
-
 #### pacman
 yes | sudo pacman -S xclip
 yes | sudo pacman -S vscode
-yes | sudo pacman -S neovimsudo 
-yes | sudo pacman -S steam
+yes | sudo pacman -S neovim 
+sudo pacman -S steam
 yes | sudo pacman -S jre-openjdk
 yes | sudo pacman -S nodejs
 yes | sudo pacman -S npm
@@ -68,6 +59,11 @@ echo 'alias clse="cls && exit"' >> .bashrc
 echo 'alias tViewer="teamviewer -daemon start && teamviewer"' >> .bashrc
 #### bashrc
 
-
-
+#### Docker
+yay -S docker
+sudo usermod -aG docker $USER
+newgrp docker
+sudo systemctl enable docker
+sudo systemctl start docker
+#### Docker
 
