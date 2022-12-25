@@ -59,6 +59,15 @@ echo 'alias clse="cls && exit"' >> .bashrc
 echo 'alias tViewer="teamviewer -daemon start && teamviewer"' >> .bashrc
 #### bashrc
 
+#### Teamviewer
+git clone https://aur.archlinux.org/teamviewer.git
+cd teamviewer
+makepkg -si
+cd ../
+rm -rf teamviewer
+#### Teamviewer
+
+
 #### Docker
 yay -S docker
 sudo usermod -aG docker $USER
